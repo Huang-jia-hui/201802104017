@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 //映射
@@ -34,27 +35,6 @@ public class UserController extends HttpServlet {
             e.printStackTrace();
         } catch (Exception e) {
             message.put("message", "网络异常");
-            e.printStackTrace();
-        }
-        //响应message到前端
-        response.getWriter().println(message);
-    }
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String user_json = JSONUtil.getJSON(request);
-        //将JSON字串解析为User对象
-        User userToCheck = JSON.parseObject(user_json,User.class);
-        //创建JSON对象message，以便往前端响应信息
-        JSONObject message = new JSONObject();
-        //在数据库表中增加Department对象
-        try {
-            UserService.getInstance().login(userToCheck.getUsername(),userToCheck.getPassword());
-            message.put("message","登陆成功");
-        } catch (SQLException e) {
-            message.put("message", "数据库操作异常导致登陆失败");
-            e.printStackTrace();
-        } catch (Exception e) {
-            message.put("message", "网络异常导致登录失败");
             e.printStackTrace();
         }
         //响应message到前端

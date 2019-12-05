@@ -29,7 +29,7 @@ public final class JdbcHelper {
 		try {
 			//Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			//注册驱动程序
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
 			System.out.println("未找到驱动程序类");
 		}

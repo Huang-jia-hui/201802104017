@@ -108,6 +108,7 @@ public final class UserDao {
 			desiredUser = new User(resultSet.getInt("id"),resultSet.getString("username"),resultSet.getString("password"),resultSet.getDate("loginTime"), TeacherDao.getInstance().find(resultSet.getInt("teacher_id")));
 		}
 		JdbcHelper.close(resultSet,preparedStatement,connection);
+		System.out.println(desiredUser);
 		return desiredUser;
 	}
 	public static void main(String[] args) throws SQLException {

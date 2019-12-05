@@ -1,3 +1,4 @@
+//201802104017黄佳慧
 package filter;
 
 import javax.servlet.*;
@@ -18,10 +19,6 @@ public class Filter00 implements Filter {
         //强制类型转换成HttpServletRequest类型
         HttpServletRequest request = (HttpServletRequest)servletRequest;
         HttpServletResponse response = (HttpServletResponse)servletResponse;
-        //获得请求的url
-        String path = request.getRequestURI();
-        //如果请求路径不含"/login"
-        if (!path.contains("/ok")){
             //打印
             System.out.println("response succeed");
             //设置响应字符编码格式
@@ -33,7 +30,6 @@ public class Filter00 implements Filter {
                 //设置请求字符编码为UTF-8
                 request.setCharacterEncoding("UTF-8");
             }
-        }
         //执行其他过滤器，若过滤器已经执行完毕，则执行原请求
         filterChain.doFilter(servletRequest,servletResponse);
         System.out.println("EncodingFilter -encoding ends");

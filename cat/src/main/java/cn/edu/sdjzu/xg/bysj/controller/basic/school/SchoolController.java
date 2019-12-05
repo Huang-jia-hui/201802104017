@@ -23,7 +23,6 @@ import java.util.Collection;
  */
 @WebServlet("/school.ctl")
 public class SchoolController extends HttpServlet {
-
     /**
      * 方法-功能
      * put 修改
