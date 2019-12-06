@@ -27,9 +27,11 @@ public class LoginController extends HttpServlet {
             User userToCheck = UserService.getInstance().login(username,password);
             if(userToCheck!=null){
                 message.put("message","登陆成功");
+                //获取session对象
                 HttpSession session = request.getSession();
                 //10分钟没有操作，session失效
                 session.setMaxInactiveInterval(10*60);
+           
                 session.setAttribute("currentUser",userToCheck);
                 response.getWriter().println(message);
                 //此处应重定向到索引页
