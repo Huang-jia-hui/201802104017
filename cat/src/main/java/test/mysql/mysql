@@ -1,5 +1,6 @@
 d:
 cd my5.5\bin
+.\mysqld -install
 net start mysql5.5
 .\mysql -uroot -p
 create database bysj default character set utf8 collate utf8_general_ci;
