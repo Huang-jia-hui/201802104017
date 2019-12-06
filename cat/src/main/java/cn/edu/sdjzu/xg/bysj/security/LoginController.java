@@ -23,7 +23,6 @@ public class LoginController extends HttpServlet {
         String password = request.getParameter("password");
         //创建JSON对象message，以便往前端响应信息
         JSONObject message = new JSONObject();
-        //在数据库表中增加Department对象
         try {
             User userToCheck = UserService.getInstance().login(username,password);
             if(userToCheck!=null){

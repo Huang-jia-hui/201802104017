@@ -2,13 +2,27 @@
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
     <data-source source="LOCAL" name="jdbc:mysql://localhost:3306/bysj?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=Asia/Shanghai" uuid="b4b2edcd-c0f4-4cc2-a828-824c27d3946f">
-      <driver-ref>mysql.8</driver-ref>
+      <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/bysj?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=Asia/Shanghai</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="CONVERT_TO_NULL" />
+        <property name="tinyInt1isBit" value="false" />
+        <property name="characterEncoding" value="utf8" />
+        <property name="characterSetResults" value="utf8" />
+        <property name="yearIsDateType" value="false" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="jdbc:mysql://localhost:3306/bysj?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=Asia/Shanghai [2]" uuid="85b540b1-090e-4f7b-a641-d22c7a4f008f">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/bysj?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=Asia/Shanghai</jdbc-url>
+      <driver-properties>
+        <property name="autoReconnect" value="true" />
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
         <property name="tinyInt1isBit" value="false" />
         <property name="characterEncoding" value="utf8" />
         <property name="characterSetResults" value="utf8" />

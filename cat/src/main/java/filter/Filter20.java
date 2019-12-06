@@ -14,9 +14,6 @@ import java.io.IOException;
 @WebFilter(filterName = "Filter 2",urlPatterns = "/*")
 public class Filter20 implements Filter {
 
-    @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
-    }
 
 
     @Override
@@ -46,8 +43,6 @@ public class Filter20 implements Filter {
         filterChain.doFilter(servletRequest,servletResponse);
         System.out.println("loginFilter ends");
         }
-    @Override
-    public void destroy() {
-    }
+
 
 }
