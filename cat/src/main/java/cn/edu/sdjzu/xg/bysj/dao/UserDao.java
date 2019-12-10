@@ -6,7 +6,6 @@ import cn.edu.sdjzu.xg.bysj.domain.User;
 import util.JdbcHelper;
 
 import java.sql.*;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -110,16 +109,5 @@ public final class UserDao {
 		JdbcHelper.close(resultSet,preparedStatement,connection);
 		System.out.println(desiredUser);
 		return desiredUser;
-	}
-	public static void main(String[] args) throws SQLException {
-		UserDao dao = new UserDao();
-		Collection<User> users = dao.findAll();
-		display(users);
-	}
-
-	private static void display(Collection<User> users) {
-		for (User user : users) {
-			System.out.println(user);
-		}
 	}
 }
