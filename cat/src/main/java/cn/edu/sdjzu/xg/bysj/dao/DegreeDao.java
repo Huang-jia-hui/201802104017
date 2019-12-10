@@ -40,9 +40,9 @@ public final class DegreeDao {
     public Degree find(Integer id) throws SQLException{
         Degree degree = null;
         Connection connection = JdbcHelper.getConn();
-        String deleteDegree_sql = "SELECT * FROM degree WHERE id=?";
+        String findDegree_sql = "SELECT * FROM degree WHERE id=?";
         //在该连接上创建预编译语句对象，参数为String类型的sql语句
-        PreparedStatement preparedStatement = connection.prepareStatement(deleteDegree_sql);
+        PreparedStatement preparedStatement = connection.prepareStatement(findDegree_sql);
         //为预编译参数赋值
         preparedStatement.setInt(1,id);
         //创建结果集对象，执行预编译语句对象
