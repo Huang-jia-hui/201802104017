@@ -18,7 +18,7 @@ import java.sql.SQLException;
 @WebServlet("/login")
 public class LoginController extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         //创建JSON对象message，以便往前端响应信息
@@ -27,11 +27,9 @@ public class LoginController extends HttpServlet {
             User userToCheck = UserService.getInstance().login(username,password);
             if(userToCheck!=null){
                 message.put("message","登陆成功");
-                //获取session对象
                 HttpSession session = request.getSession();
                 //10分钟没有操作，session失效
                 session.setMaxInactiveInterval(10*60);
-           
                 session.setAttribute("currentUser",userToCheck);
                 response.getWriter().println(message);
                 //此处应重定向到索引页
